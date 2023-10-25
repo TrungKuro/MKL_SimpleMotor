@@ -34,3 +34,15 @@
 |**<span style="color:#E47128">car_rotateR(`speed`)**|Điều khiển xe xoay phải.<br>- *speed:* tốc độ xe (0% ~ 100%).
 |-|-|
 |**<span style="color:#E47128">car_stop()**|Điều khiển xe dừng lại.
+
+> Để điều khiển xe đúng, cần kết nối Motor đến Driver đúng chiều.
+>
+> |Motor|Driver|
+> |-----|------|
+> |Motor Trái `(-)`|OUT1|
+> |Motor Trái `(+)`|OUT2|
+> |Motor Phải `(+)`|OUT3|
+> |Motor Phải `(-)`|OUT4|
+>
+> Trong đó, khi bạn cấp nguồn đúng cực `(+)` và `(-)` của Motor, sẽ làm motor quay hướng giúp xe đi tới.
+

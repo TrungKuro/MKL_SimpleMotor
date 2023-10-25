@@ -17,11 +17,11 @@
 /*                                   CLASS                                   */
 /* ------------------------------------------------------------------------- */
 
-class MKL_SimpleMotor
+class Makerlabvn_SimpleMotor
 {
 public:
   /* ------------------------------- HÀM TẠO ------------------------------- */
-  MKL_SimpleMotor(
+  Makerlabvn_SimpleMotor(
       int pinIn1, int pinIn2,
       int pinIn3, int pinIn4);
 

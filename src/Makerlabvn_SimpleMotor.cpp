@@ -2,13 +2,13 @@
 /*                                  LIBRARY                                  */
 /* ------------------------------------------------------------------------- */
 
-#include "MKL_SimpleMotor.h"
+#include "Makerlabvn_SimpleMotor.h"
 
 /* ------------------------------------------------------------------------- */
 /*                                  HÀM TẠO                                  */
 /* ------------------------------------------------------------------------- */
 
-MKL_SimpleMotor::MKL_SimpleMotor(
+Makerlabvn_SimpleMotor::Makerlabvn_SimpleMotor(
     int pinIn1, int pinIn2,
     int pinIn3, int pinIn4)
 {
@@ -38,7 +38,7 @@ MKL_SimpleMotor::MKL_SimpleMotor(
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::motorA_fw(int speed)
+void Makerlabvn_SimpleMotor::motorA_fw(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -54,7 +54,7 @@ void MKL_SimpleMotor::motorA_fw(int speed)
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::motorB_fw(int speed)
+void Makerlabvn_SimpleMotor::motorB_fw(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -72,7 +72,7 @@ void MKL_SimpleMotor::motorB_fw(int speed)
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::motorA_bw(int speed)
+void Makerlabvn_SimpleMotor::motorA_bw(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -88,7 +88,7 @@ void MKL_SimpleMotor::motorA_bw(int speed)
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::motorB_bw(int speed)
+void Makerlabvn_SimpleMotor::motorB_bw(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -103,7 +103,7 @@ void MKL_SimpleMotor::motorB_bw(int speed)
 /**
  * Điều khiển motor kênh A dừng lại
  */
-void MKL_SimpleMotor::motorA_stop()
+void Makerlabvn_SimpleMotor::motorA_stop()
 {
   // Điều khiển Motor bên TRÁI dừng lại
   digitalWrite(_pinIn1, LOW);
@@ -113,7 +113,7 @@ void MKL_SimpleMotor::motorA_stop()
 /**
  * Điều khiển motor kênh B dừng lại
  */
-void MKL_SimpleMotor::motorB_stop()
+void Makerlabvn_SimpleMotor::motorB_stop()
 {
   // Điều khiển Motor bên PHẢI dừng lại
   digitalWrite(_pinIn4, LOW);
@@ -133,7 +133,7 @@ void MKL_SimpleMotor::motorB_stop()
  * - speedB : tốc độ động cơ kênh B, bên PHẢI của xe
  *            phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::car_fw(int speedA, int speedB)
+void Makerlabvn_SimpleMotor::car_fw(int speedA, int speedB)
 {
   // Xử lý giá trị tốc độ nhận được
   speedA = calculate_speed(speedA);
@@ -152,7 +152,7 @@ void MKL_SimpleMotor::car_fw(int speedA, int speedB)
  * - speedB : tốc độ động cơ kênh B, bên PHẢI của xe
  *            phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::car_bw(int speedA, int speedB)
+void Makerlabvn_SimpleMotor::car_bw(int speedA, int speedB)
 {
   // Xử lý giá trị tốc độ nhận được
   speedA = calculate_speed(speedA);
@@ -170,7 +170,7 @@ void MKL_SimpleMotor::car_bw(int speedA, int speedB)
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::car_rotateL(int speed)
+void Makerlabvn_SimpleMotor::car_rotateL(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -185,7 +185,7 @@ void MKL_SimpleMotor::car_rotateL(int speed)
  * - speed : tốc độ động cơ, đơn vị (%)
  *           phạm vi giá trị từ 0% đến 100%
  */
-void MKL_SimpleMotor::car_rotateR(int speed)
+void Makerlabvn_SimpleMotor::car_rotateR(int speed)
 {
   // Xử lý giá trị tốc độ nhận được
   speed = calculate_speed(speed);
@@ -199,7 +199,7 @@ void MKL_SimpleMotor::car_rotateR(int speed)
 /**
  * Điều khiển xe dừng lại
  */
-void MKL_SimpleMotor::car_stop()
+void Makerlabvn_SimpleMotor::car_stop()
 {
   motorA_stop(); // Điều khiển motor kênh A dừng lại
   motorB_stop(); // Điều khiển motor kênh B dừng lại
@@ -213,7 +213,7 @@ void MKL_SimpleMotor::car_stop()
  * Đảm bảo giá trị tốc độ (%) nhận được trong khoảng 0% đến 100%
  * Đồng thời chuyển đổi tốc độ (%) sang thang (PWM) tương ứng
  */
-int MKL_SimpleMotor::calculate_speed(int speed)
+int Makerlabvn_SimpleMotor::calculate_speed(int speed)
 {
   // Đảm bảo giá trị tốc độ (%) nằm trong khoảng cho phép
   speed = constrain(speed, 0, 100);
