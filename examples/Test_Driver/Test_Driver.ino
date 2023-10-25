@@ -55,6 +55,7 @@ void loop()
 {
   Serial.println("Điều khiển xe...");
   Serial.println();
+  delay(1000);
 
   /* ----------------------------------------------------------------------- */
 
@@ -62,11 +63,11 @@ void loop()
   demo.car_fw(100, 100);
   delay(5000);
 
-  Serial.println("Đi thẳng tốc độ 100%, rẽ trái");
+  Serial.println("Đi thẳng tốc độ 100%, rẽ trái.");
   demo.car_fw(0, 100);
   delay(5000);
 
-  Serial.println("Đi thẳng tốc độ 100%, rẽ phải");
+  Serial.println("Đi thẳng tốc độ 100%, rẽ phải.");
   demo.car_fw(100, 0);
   delay(5000);
 
@@ -76,22 +77,22 @@ void loop()
   demo.car_bw(100, 100);
   delay(5000);
 
-  Serial.println("Đi lùi tốc độ 100%, rẽ trái");
+  Serial.println("Đi lùi tốc độ 100%, rẽ trái.");
   demo.car_bw(0, 100);
   delay(5000);
 
-  Serial.println("Đi lùi tốc độ 100%, rẽ phải");
+  Serial.println("Đi lùi tốc độ 100%, rẽ phải.");
   demo.car_bw(100, 0);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */
 
-  Serial.println("Xoay trái tốc độ 70%.");
-  demo.car_rotateL(70);
+  Serial.println("Xoay trái tốc độ 50%.");
+  demo.car_rotateL(50);
   delay(5000);
 
-  Serial.println("Xoay phải tốc độ 70%.");
-  demo.car_rotateR(70);
+  Serial.println("Xoay phải tốc độ 50%.");
+  demo.car_rotateR(50);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */
