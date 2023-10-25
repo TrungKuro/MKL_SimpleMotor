@@ -21,6 +21,11 @@ MKL_SimpleMotor::MKL_SimpleMotor(
   pinMode(_pinIn2, OUTPUT);
   pinMode(_pinIn3, OUTPUT);
   pinMode(_pinIn4, OUTPUT);
+
+  digitalWrite(_pinIn1, LOW);
+  digitalWrite(_pinIn2, LOW);
+  digitalWrite(_pinIn3, LOW);
+  digitalWrite(_pinIn4, LOW);
 }
 
 /* ------------------------------------------------------------------------- */
@@ -39,8 +44,8 @@ void MKL_SimpleMotor::motorA_fw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên TRÁI quay tới
-  analogWrite(_pinIn2, speed); // ~PWM
   digitalWrite(_pinIn1, LOW);
+  analogWrite(_pinIn2, speed); // ~PWM
 }
 
 /**
@@ -55,8 +60,8 @@ void MKL_SimpleMotor::motorB_fw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên PHẢI quay tới
-  analogWrite(_pinIn3, speed); // ~PWM
   digitalWrite(_pinIn4, LOW);
+  analogWrite(_pinIn3, speed); // ~PWM
 }
 
 /* ------------------------------------------------------------------------- */
@@ -73,8 +78,8 @@ void MKL_SimpleMotor::motorA_bw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên TRÁI quay lùi
-  analogWrite(_pinIn2, 255 - speed); // ~PWM
   digitalWrite(_pinIn1, HIGH);
+  analogWrite(_pinIn2, 255 - speed); // ~PWM
 }
 
 /**
@@ -89,8 +94,8 @@ void MKL_SimpleMotor::motorB_bw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên PHẢI quay lùi
-  analogWrite(_pinIn3, 255 - speed); // ~PWM
   digitalWrite(_pinIn4, HIGH);
+  analogWrite(_pinIn3, 255 - speed); // ~PWM
 }
 
 /* ------------------------------------------------------------------------- */
@@ -101,8 +106,8 @@ void MKL_SimpleMotor::motorB_bw(int speed)
 void MKL_SimpleMotor::motorA_stop()
 {
   // Điều khiển Motor bên TRÁI dừng lại
-  digitalWrite(_pinIn2, LOW); // none ~PWM
   digitalWrite(_pinIn1, LOW);
+  digitalWrite(_pinIn2, LOW); // none ~PWM
 }
 
 /**
@@ -111,8 +116,8 @@ void MKL_SimpleMotor::motorA_stop()
 void MKL_SimpleMotor::motorB_stop()
 {
   // Điều khiển Motor bên PHẢI dừng lại
-  digitalWrite(_pinIn3, LOW); // none ~PWM
   digitalWrite(_pinIn4, LOW);
+  digitalWrite(_pinIn3, LOW); // none ~PWM
 }
 
 /* ------------------------------------------------------------------------- */
@@ -211,7 +216,7 @@ void MKL_SimpleMotor::car_stop()
 int MKL_SimpleMotor::calculate_speed(int speed)
 {
   // Đảm bảo giá trị tốc độ (%) nằm trong khoảng cho phép
-  constrain(speed, 0, 100);
+  speed = constrain(speed, 0, 100);
 
   // Chuyển đổi giá trị tốc độ (%) sang (PWM)
   speed = map(speed, 0, 100, 0, 255);

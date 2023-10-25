@@ -70,7 +70,7 @@ void loop()
 
   /* ----------------------------------------------------------------------- */
 
-  Serial.println("Điều khiển động cơ kênh A...");
+  Serial.println("Điều khiển động cơ kênh B...");
   Serial.println();
 
   Serial.println("Quay thuận 100%");

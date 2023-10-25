@@ -72,16 +72,16 @@ void loop()
 
   /* ----------------------------------------------------------------------- */
 
-  Serial.println("Đi lùi tốc độ 50%.");
-  demo.car_bw(50, 50);
+  Serial.println("Đi lùi tốc độ 100%.");
+  demo.car_bw(100, 100);
   delay(5000);
 
-  Serial.println("Đi lùi tốc độ 50%, rẽ trái");
-  demo.car_bw(0, 50);
+  Serial.println("Đi lùi tốc độ 100%, rẽ trái");
+  demo.car_bw(0, 100);
   delay(5000);
 
-  Serial.println("Đi lùi tốc độ 50%, rẽ phải");
-  demo.car_bw(50, 0);
+  Serial.println("Đi lùi tốc độ 100%, rẽ phải");
+  demo.car_bw(100, 0);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */
