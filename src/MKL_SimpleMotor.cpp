@@ -73,7 +73,7 @@ void MKL_SimpleMotor::motorA_bw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên TRÁI quay lùi
-  analogWrite(_pinIn2, 255 - PWM); // ~PWM
+  analogWrite(_pinIn2, 255 - speed); // ~PWM
   digitalWrite(_pinIn1, HIGH);
 }
 
@@ -89,7 +89,7 @@ void MKL_SimpleMotor::motorB_bw(int speed)
   speed = calculate_speed(speed);
 
   // Điều khiển Motor bên PHẢI quay lùi
-  analogWrite(_pinIn3, 255 - PWM); // ~PWM
+  analogWrite(_pinIn3, 255 - speed); // ~PWM
   digitalWrite(_pinIn4, HIGH);
 }
 
