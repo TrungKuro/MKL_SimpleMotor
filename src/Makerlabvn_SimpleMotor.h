@@ -46,6 +46,10 @@ public:
 
   void car_stop(); // Điều khiển xe dừng lại
 
+  /* ---------------------- HÀM ĐIỀU KHIỂN XE NÂNG CAO --------------------- */
+
+  void car_custom(int speedA, int speedB); // Điều khiển xe tùy chỉnh
+
 private:
   /* ----------------------- (BIẾN) CẤU HÌNH CÁC PIN ----------------------- */
   int _pinIn1;

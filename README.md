@@ -27,13 +27,15 @@
 
 |Hàm|Chức năng|
 |---|---------|
-|**<span style="color:#E47128">car_fw(`speedA`, `speedB`)**|Điều khiển xe đi tới.<br>- *speedA:* tốc độ quay bánh Trái (0% ~ 100%).<br>- *speedA:* tốc độ quay bánh Phải (0% ~ 100%).
-|**<span style="color:#E47128">car_bw(`speedA`, `speedB`)**|Điều khiển xe đi lùi.<br>- *speedA:* tốc độ quay bánh Trái (0% ~ 100%).<br>- *speedA:* tốc độ quay bánh Phải (0% ~ 100%).
+|**<span style="color:#E47128">car_fw(`speedA`, `speedB`)**|Điều khiển xe đi tới.<br>- *speedA:* tốc độ quay bánh Trái (0% ~ 100%).<br>- *speedB:* tốc độ quay bánh Phải (0% ~ 100%).
+|**<span style="color:#E47128">car_bw(`speedA`, `speedB`)**|Điều khiển xe đi lùi.<br>- *speedA:* tốc độ quay bánh Trái (0% ~ 100%).<br>- *speedB:* tốc độ quay bánh Phải (0% ~ 100%).
 |-|-|
 |**<span style="color:#E47128">car_rotateL(`speed`)**|Điều khiển xe xoay trái.<br>- *speed:* tốc độ xe (0% ~ 100%).
 |**<span style="color:#E47128">car_rotateR(`speed`)**|Điều khiển xe xoay phải.<br>- *speed:* tốc độ xe (0% ~ 100%).
 |-|-|
 |**<span style="color:#E47128">car_stop()**|Điều khiển xe dừng lại.
+|-|-|
+|**<span style="color:#E47128">car_custom(`speedA`, `speedB`)**|Điều khiển xe tùy chỉnh.<br>- *speedA:* tốc độ quay bánh Trái (-100% ~ +100%).<br>- *speedB:* tốc độ quay bánh Phải (-100% ~ +100%).<br><br>Trong đó, giá trị (+) là quay thuận và giá trị (-) là quay ngược.
 
 > Để điều khiển xe đúng, cần kết nối Motor đến Driver đúng chiều.
 >

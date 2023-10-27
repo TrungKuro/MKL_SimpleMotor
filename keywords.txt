@@ -16,3 +16,5 @@ car_rotateL KEYWORD2
 car_rotateR KEYWORD2
 
 car_stop KEYWORD2
+
+car_custom KEYWORD2

@@ -60,39 +60,39 @@ void loop()
   /* ----------------------------------------------------------------------- */
 
   Serial.println("Đi thẳng tốc độ 100%.");
-  demo.car_fw(100, 100);
+  demo.car_fw(100, 100); // ~ demo.car_custom(100, 100);
   delay(5000);
 
   Serial.println("Đi thẳng tốc độ 100%, rẽ trái.");
-  demo.car_fw(0, 100);
+  demo.car_fw(0, 100); // ~ demo.car_custom(0, 100);
   delay(5000);
 
   Serial.println("Đi thẳng tốc độ 100%, rẽ phải.");
-  demo.car_fw(100, 0);
+  demo.car_fw(100, 0); // ~ demo.car_custom(100, 0);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */
 
   Serial.println("Đi lùi tốc độ 100%.");
-  demo.car_bw(100, 100);
+  demo.car_bw(100, 100); // ~ demo.car_custom(-100, -100);
   delay(5000);
 
   Serial.println("Đi lùi tốc độ 100%, rẽ trái.");
-  demo.car_bw(0, 100);
+  demo.car_bw(0, 100); // ~ demo.car_custom(0, -100);
   delay(5000);
 
   Serial.println("Đi lùi tốc độ 100%, rẽ phải.");
-  demo.car_bw(100, 0);
+  demo.car_bw(100, 0); // ~ demo.car_custom(-100, 0);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */
 
   Serial.println("Xoay trái tốc độ 50%.");
-  demo.car_rotateL(50);
+  demo.car_rotateL(50); // ~ demo.car_custom(-50, 50);
   delay(5000);
 
   Serial.println("Xoay phải tốc độ 50%.");
-  demo.car_rotateR(50);
+  demo.car_rotateR(50); // ~ demo.car_custom(50, -50);
   delay(5000);
 
   /* ----------------------------------------------------------------------- */

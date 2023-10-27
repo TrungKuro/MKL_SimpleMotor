@@ -206,6 +206,42 @@ void Makerlabvn_SimpleMotor::car_stop()
 }
 
 /* ------------------------------------------------------------------------- */
+/*                         HÀM ĐIỀU KHIỂN XE NÂNG CAO                        */
+/* ------------------------------------------------------------------------- */
+
+/**
+ * Điều khiển xe tùy chỉnh
+ *
+ * - speedA : tốc độ động cơ kênh A, bên TRÁI của xe
+ *            phạm vi giá trị từ -100% đến +100%
+ *
+ * - speedB : tốc độ động cơ kênh B, bên PHẢI của xe
+ *            phạm vi giá trị từ -100% đến +100%
+ *
+ * Trong đó giá trị (%):
+ * - (+) motor quay thuận
+ * - (-) motor quay ngược
+ */
+void Makerlabvn_SimpleMotor::car_custom(int speedA, int speedB)
+{
+  // Đảm bảo giá trị tốc độ (%) nằm trong khoảng cho phép
+  speedA = constrain(speedA, -100, 100);
+  speedB = constrain(speedB, -100, 100);
+
+  // Xử lý motor bên Trái
+  if (speedA >= 0)
+    motorA_fw(speedA);
+  else
+    motorA_bw(-speedA);
+
+  // Xử lý motor bên Phải
+  if (speedB >= 0)
+    motorB_fw(speedB);
+  else
+    motorB_bw(-speedB);
+}
+
+/* ------------------------------------------------------------------------- */
 /*                               HÀM ĐẶT TỐC ĐỘ                              */
 /* ------------------------------------------------------------------------- */
 
